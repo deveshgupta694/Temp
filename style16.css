@@ -1,0 +1,82 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+#wraper
+{
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.container
+{
+    height: 100%;
+    max-width: 1000px;
+    margin: 0 auto;/*0 auto use to center the content -> equal margin form left and right*/
+    padding: 20px;/*border or content ka beach ka gap*/
+}
+
+.container h1{/*container ka aander jo h1 hay ussmay apply karo*/
+    margin: 20px 0;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 3rem;
+}
+
+.gallery
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card
+{
+    width: 32%;
+    position: relative;/*overlap kerwana tha caption or img ka*/
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card img{
+    width: 100%;
+    height: 100%;
+    filter: grayscale(100%);/*black & white*/
+    box-shadow:0 0 20px ;
+    object-fit: cover;
+}
+
+.card:hover
+{
+    transform: scale(1.03);
+    transition: 0.5s;
+    filter: drop-shadow(0 0 10px #333);/*replacemeent of box shadow*/
+}
+
+.card:hover img{
+    filter: grayscale(0%);/*give colour back*/
+}
+
+.card figcaption
+{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    padding: 25px;
+    height: 20%;
+    width: 100%;
+    font-size: 20px;
+    color: white;
+    opacity: 0;/*INVISIBLE */
+    transition: 0.5s;
+}
+
+.card:hover figcaption
+{
+    opacity: 1;/*VISIBLE */
+    transform: scale(1.03);
+}
